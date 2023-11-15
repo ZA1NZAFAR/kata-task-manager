@@ -35,7 +35,7 @@ public class TaskManager {
         throw new Exception("Element not found");
     }
 
-    public List<Triplet<Integer,Boolean, String>> getStack() {
+    public List<Triplet<Integer, Boolean, String>> getStack() {
         return stack;
     }
 
@@ -49,5 +49,15 @@ public class TaskManager {
 
     public void setStatusToDo(int id) throws Exception {
         stack.set(this.find(id), stack.get(this.find(id)).setAt1(false));
+    }
+
+    public void printStack() {
+        if (stack.isEmpty()) {
+            System.out.println("No task yet");
+            return;
+        }
+        for (Triplet<Integer, Boolean, String> task : stack) {
+            System.out.println(task.getValue0() + " - " + (task.getValue1() ? "[X]" : "[ ]") + " - " + task.getValue2());
+        }
     }
 }
