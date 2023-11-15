@@ -63,7 +63,7 @@ public class TestTaskManager {
     }
 
     @Test
-    public void testFindInvalidIndexTask() throws Exception {
+    public void testFindInvalidIndexTask() {
         taskManager.add("Learn JAVA");
         taskManager.add("Learn PYTHON");
 

@@ -1,13 +1,14 @@
 package net.efrei;
 
 import org.javatuples.Pair;
+import org.javatuples.Triplet;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class TaskManager {
 
-    private List<Pair<Integer, String>> stack;
+    private List<Triplet<Integer, Boolean, String>> stack;
     private int currentId;
 
     public TaskManager() {
@@ -23,7 +24,7 @@ public class TaskManager {
     }
 
     public void add(String description) {
-        stack.add(new Pair<>(currentId, description));
+        stack.add(new Triplet<>(currentId, false, description));
         currentId++;
     }
 
@@ -34,7 +35,7 @@ public class TaskManager {
         throw new Exception("Element not found");
     }
 
-    public List<Pair<Integer, String>> getStack() {
+    public List<Triplet<Integer,Boolean, String>> getStack() {
         return stack;
     }
 
