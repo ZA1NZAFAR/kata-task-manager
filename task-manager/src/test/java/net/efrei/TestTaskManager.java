@@ -4,6 +4,8 @@ import org.javatuples.Pair;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestTaskManager {
@@ -30,5 +32,15 @@ public class TestTaskManager {
 
         assertEquals(expected, result);
     }
+
+
+    @Test
+    public void testInitStack() {
+        List<Pair<Integer, String>> result = taskManager.getStack();
+        List<Pair<Integer, String>> expected = List.of();
+
+        assertEquals(expected, result);
+    }
+
 
 }
