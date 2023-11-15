@@ -51,5 +51,22 @@ public class TestTaskManager {
         assertEquals(expected, result);
     }
 
+    @Test
+    public void testFindIndexTask() throws Exception {
+        taskManager.add("Learn JAVA");
+        taskManager.add("Learn PYTHON");
+
+        int resultIndex = taskManager.find(2);
+
+        assertEquals(1, resultIndex);
+    }
+
+    @Test
+    public void testFindInvalidIndexTask() throws Exception {
+        taskManager.add("Learn JAVA");
+        taskManager.add("Learn PYTHON");
+
+        assertThrows(Exception.class, () -> taskManager.find(3));
+    }
 
 }
