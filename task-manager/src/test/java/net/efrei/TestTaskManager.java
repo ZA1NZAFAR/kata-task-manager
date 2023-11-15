@@ -106,4 +106,8 @@ public class TestTaskManager {
         assertEquals(expected, result);
     }
 
+    @Test
+    public void testTreatment() {
+
+    }
 }
