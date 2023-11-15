@@ -94,4 +94,27 @@ public class TestTaskManager {
         assertEquals(expected, result);
     }
 
+    @Test
+    public void testSetStatusToDo() throws Exception {
+        taskManager.add("Learn JAVA");
+        taskManager.setStatusDone(1);
+
+        taskManager.setStatusToDo(1);
+        List<Triplet<Integer, Boolean, String>> result = taskManager.getStack();
+        List<Triplet<Integer, Boolean, String>> expected = List.of(new Triplet<>(1, false, "Learn JAVA"));
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testSetStatusDone() throws Exception {
+        taskManager.add("Learn JAVA");
+
+        taskManager.setStatusDone(1);
+        List<Triplet<Integer, Boolean, String>> result = taskManager.getStack();
+        List<Triplet<Integer, Boolean, String>> expected = List.of(new Triplet<>(1, true, "Learn JAVA"));
+
+        assertEquals(expected, result);
+    }
+
 }

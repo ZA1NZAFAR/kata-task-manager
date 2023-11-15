@@ -46,4 +46,8 @@ public class TaskManager {
     public void setStatusDone(int id) throws Exception {
         stack.set(this.find(id), stack.get(this.find(id)).setAt1(true));
     }
+
+    public void setStatusToDo(int id) throws Exception {
+        stack.set(this.find(id), stack.get(this.find(id)).setAt1(false));
+    }
 }
