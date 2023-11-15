@@ -1,6 +1,7 @@
 package net.efrei;
 
 import org.javatuples.Pair;
+import org.javatuples.Triplet;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -37,8 +38,8 @@ public class TestTaskManager {
 
     @Test
     public void testInitStack() {
-        List<Pair<Integer, String>> result = taskManager.getStack();
-        List<Pair<Integer, String>> expected = List.of();
+        List<Triplet<Integer, Boolean, String>> result = taskManager.getStack();
+        List<Triplet<Integer, Boolean, String>> expected = List.of();
 
         assertEquals(expected, result);
     }
@@ -46,8 +47,8 @@ public class TestTaskManager {
     @Test
     public void testAddTask() {
         taskManager.add("Learn JAVA");
-        List<Pair<Integer, String>> result = taskManager.getStack();
-        List<Pair<Integer, String>> expected = List.of(new Pair<>(1, "Learn JAVA"));
+        List<Triplet<Integer, Boolean, String>> result = taskManager.getStack();
+        List<Triplet<Integer, Boolean, String>> expected = List.of(new Triplet<>(1, false, "Learn JAVA"));
 
         assertEquals(expected, result);
     }
@@ -76,8 +77,8 @@ public class TestTaskManager {
         taskManager.add("Learn PYTHON");
 
         taskManager.delete(1);
-        List<Pair<Integer, String>> result = taskManager.getStack();
-        List<Pair<Integer, String>> expected = List.of(new Pair<>(2, "Learn PYTHON"));
+        List<Triplet<Integer, Boolean, String>> result = taskManager.getStack();
+        List<Triplet<Integer, Boolean, String>> expected = List.of(new Triplet<>(2, false, "Learn PYTHON"));
 
         assertEquals(expected, result);
     }
