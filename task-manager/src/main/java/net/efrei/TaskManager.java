@@ -27,6 +27,13 @@ public class TaskManager {
         currentId++;
     }
 
+    public int find(int id) throws Exception {
+        for (int i = 0; i < stack.size(); i++) {
+            if (id == stack.get(i).getValue0()) return i;
+        }
+        throw new Exception("Element not found");
+    }
+
     public List<Pair<Integer, String>> getStack() {
         return stack;
     }
