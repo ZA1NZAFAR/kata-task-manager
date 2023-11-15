@@ -42,4 +42,8 @@ public class TaskManager {
     public void delete(int id) throws Exception {
         stack.remove(this.find(id));
     }
+
+    public void setStatusDone(int id) throws Exception {
+        stack.set(this.find(id), stack.get(this.find(id)).setAt1(true));
+    }
 }
