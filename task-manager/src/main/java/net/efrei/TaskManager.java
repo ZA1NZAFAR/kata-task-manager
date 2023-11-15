@@ -37,4 +37,8 @@ public class TaskManager {
     public List<Pair<Integer, String>> getStack() {
         return stack;
     }
+
+    public void delete(int id) throws Exception {
+        stack.remove(this.find(id));
+    }
 }
