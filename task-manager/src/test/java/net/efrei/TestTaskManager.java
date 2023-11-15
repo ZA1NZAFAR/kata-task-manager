@@ -42,5 +42,14 @@ public class TestTaskManager {
         assertEquals(expected, result);
     }
 
+    @Test
+    public void testAddTask() {
+        taskManager.add("Learn JAVA");
+        List<Pair<Integer, String>> result = taskManager.getStack();
+        List<Pair<Integer, String>> expected = List.of(new Pair<>(1, "Learn JAVA"));
+
+        assertEquals(expected, result);
+    }
+
 
 }
