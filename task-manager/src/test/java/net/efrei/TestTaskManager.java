@@ -70,4 +70,16 @@ public class TestTaskManager {
         assertThrows(Exception.class, () -> taskManager.find(3));
     }
 
+    @Test
+    public void testDeleteTask() throws Exception {
+        taskManager.add("Learn JAVA");
+        taskManager.add("Learn PYTHON");
+
+        taskManager.delete(1);
+        List<Pair<Integer, String>> result = taskManager.getStack();
+        List<Pair<Integer, String>> expected = List.of(new Pair<>(2, "Learn PYTHON"));
+
+        assertEquals(expected, result);
+    }
+
 }
