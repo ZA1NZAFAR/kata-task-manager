@@ -9,10 +9,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestTaskManager {
 
-    private TaskManager taskManager;
+    private static TaskManager taskManager;
 
     @BeforeAll
-    public void setUp() {
+    public static void setUp() {
         taskManager = new TaskManager();
     }
 
