@@ -23,4 +23,12 @@ public class TestTaskManager {
         assertEquals(expected, result);
     }
 
+    @Test
+    public void testParseQ() {
+        Pair<Character, String> result = taskManager.parse("q");
+        Pair<Character, String> expected = new Pair<>('q', "");
+
+        assertEquals(expected, result);
+    }
+
 }
