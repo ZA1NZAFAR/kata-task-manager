@@ -1,7 +1,6 @@
 package net.efrei;
 
 import org.javatuples.Pair;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -18,7 +17,7 @@ public class TestTaskManager {
 
     @Test
     public void testParsePlus() {
-        Pair<Character, String> result =  taskManager.parse("+ Learn JAVA");
+        Pair<Character, String> result = taskManager.parse("+ Learn JAVA");
         Pair<Character, String> expected = new Pair<>('+', "Learn JAVA");
 
         assertEquals(expected, result);
